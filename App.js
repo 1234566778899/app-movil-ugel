@@ -27,6 +27,8 @@ import UserEdit from './src/screens/main/UserEdit';
 import AddUserScreen from './src/screens/main/AddUserScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import AddIEApp from './src/screens/main/AddIEApp';
+import AddTeacherScreen from './src/screens/AddTeacherScreen';
+import EditProfileScreen from './src/screens/main/EditProfileScreen';
 
 const theme = {
   ...DefaultTheme,
@@ -93,6 +95,11 @@ export default function App() {
               options={{ title: 'Editar' }}
             />
             <Stack.Screen
+              name="add-teacher"
+              component={AddTeacherScreen}
+              options={{ title: 'Agregar profesor' }}
+            />
+            <Stack.Screen
               name="performance"
               component={PerformanceScreen}
               options={{ title: 'Desempeño' }}
@@ -101,6 +108,11 @@ export default function App() {
               name="edit-performance"
               component={EditPerformanceScreen}
               options={{ title: 'Editar desempeño' }}
+            />
+            <Stack.Screen
+              name="edit-profile"
+              component={EditProfileScreen}
+              options={{ title: 'Editar Perfil' }}
             />
             <Stack.Screen
               name="edit-performance-directivo"
@@ -140,7 +152,7 @@ export default function App() {
             <Stack.Screen
               name="visitas"
               component={VisitsScreen}
-              options={{ title: '' }}
+              options={{ title: 'Mis visitas' }}
             />
             <Stack.Screen
               name="registros"

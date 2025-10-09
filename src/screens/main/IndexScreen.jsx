@@ -93,7 +93,7 @@ export default function IndexScreen() {
             />
 
             <Tab.Screen
-                name="profile"
+                name="profile" ProfileScreen
                 component={ProfileScreen}
                 options={{
                     title: 'Mi Perfil'

@@ -524,7 +524,7 @@ const styles = StyleSheet.create({
         color: '#666',
     },
     header: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         paddingTop: 20,
         paddingBottom: 10,
     },
@@ -556,14 +556,14 @@ const styles = StyleSheet.create({
         fontSize: 12,
     },
     searchContainer: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         paddingBottom: 10,
     },
     searchInput: {
         backgroundColor: '#2A2A2A',
     },
     listContent: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         paddingBottom: 20,
     },
     monitorCard: {

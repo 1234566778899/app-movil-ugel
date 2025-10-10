@@ -275,6 +275,11 @@ const ReportScreen = ({ navigation }) => {
                     <SegmentedButtons
                         value={type}
                         onValueChange={setType}
+                        theme={{
+                            colors: {
+                                secondaryContainer: '#90CAF9',
+                            },
+                        }}
                         buttons={[
                             {
                                 value: '1',
@@ -297,6 +302,13 @@ const ReportScreen = ({ navigation }) => {
                         onPress={() => setShowFilter(!showFilter)}
                         icon="filter"
                         style={styles.filterButton}
+                        labelStyle={{ color: showFilter ? 'white' : 'black' }}
+                        theme={{
+                            colors: {
+                                primary: 'black', // color del borde e icono cuando es "outlined"
+                                surface: showFilter ? 'black' : 'white', // fondo cuando es "contained"
+                            },
+                        }}
                     >
                         {showFilter ? 'Ocultar Filtros' : 'Mostrar Filtros'}
                     </Button>
@@ -393,6 +405,7 @@ const ReportScreen = ({ navigation }) => {
                                 mode="text"
                                 onPress={clearFilters}
                                 icon="close"
+                                theme={{ colors: { primary: 'black' } }}
                                 style={styles.clearButton}
                             >
                                 Limpiar Filtros

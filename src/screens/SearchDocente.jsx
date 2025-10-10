@@ -111,8 +111,7 @@ const SearchDocente = ({ navigation }) => {
             <TouchableOpacity
                 onPress={() => selectTeacher(teacher)}
                 style={[
-                    styles.teacherItem,
-                    isSelected && styles.teacherItemSelected
+                    styles.teacherItem
                 ]}
                 activeOpacity={0.7}
             >
@@ -121,15 +120,13 @@ const SearchDocente = ({ navigation }) => {
                         size={45}
                         label={teacher.name?.substring(0, 2).toUpperCase() || 'T'}
                         style={[
-                            styles.avatar,
-                            isSelected && styles.avatarSelected
+                            styles.avatar
                         ]}
                     />
                 </View>
                 <View style={styles.teacherInfo}>
                     <Text style={[
-                        styles.teacherName,
-                        isSelected && styles.teacherNameSelected
+                        styles.teacherName
                     ]}>
                         {fullName}
                     </Text>
@@ -137,11 +134,9 @@ const SearchDocente = ({ navigation }) => {
                         <Ionicons
                             name="card-outline"
                             size={14}
-                            color={isSelected ? "#007AFF" : "#666"}
                         />
                         <Text style={[
-                            styles.teacherDni,
-                            isSelected && styles.teacherDniSelected
+                            styles.teacherDni
                         ]}>
                             DNI: {teacher.dni}
                         </Text>
@@ -151,76 +146,24 @@ const SearchDocente = ({ navigation }) => {
                             <Ionicons
                                 name="briefcase-outline"
                                 size={14}
-                                color={isSelected ? "#007AFF" : "#666"}
+
                             />
                             <Text style={[
-                                styles.teacherDetail,
-                                isSelected && styles.teacherDetailSelected
+                                styles.teacherDetail
                             ]}>
                                 {teacher.job}
                             </Text>
                         </View>
                     )}
                 </View>
-                {isSelected && (
-                    <Ionicons name="checkmark-circle" size={24} color="#007AFF" />
-                )}
+
             </TouchableOpacity>
         );
     }, [filter.teacher]);
 
     const renderHeader = () => (
         <View>
-            {/* Opción "Todos" */}
-            <TouchableOpacity
-                onPress={() => selectTeacher(null)}
-                style={[
-                    styles.allOptionItem,
-                    !filter.teacher && styles.allOptionItemSelected
-                ]}
-                activeOpacity={0.7}
-            >
-                <View style={styles.avatarContainer}>
-                    <Avatar.Icon
-                        size={45}
-                        icon="account-multiple"
-                        style={[
-                            styles.allAvatar,
-                            !filter.teacher && styles.allAvatarSelected
-                        ]}
-                    />
-                </View>
-                <View style={styles.teacherInfo}>
-                    <Text style={[
-                        styles.allOptionText,
-                        !filter.teacher && styles.allOptionTextSelected
-                    ]}>
-                        Todos los docentes
-                    </Text>
-                    <Text style={[
-                        styles.allOptionSubtext,
-                        !filter.teacher && styles.allOptionSubtextSelected
-                    ]}>
-                        Sin filtro de docente
-                    </Text>
-                </View>
-                {!filter.teacher && (
-                    <Ionicons name="checkmark-circle" size={24} color="#007AFF" />
-                )}
-            </TouchableOpacity>
 
-            {teachers.length > 0 && (
-                <View style={styles.sectionHeader}>
-                    <Text style={styles.sectionTitle}>Seleccionar Docente</Text>
-                    <Chip
-                        icon="account"
-                        style={styles.countChip}
-                        textStyle={styles.countChipText}
-                    >
-                        {teachers.length}
-                    </Chip>
-                </View>
-            )}
         </View>
     );
 
@@ -333,8 +276,7 @@ const styles = StyleSheet.create({
     },
     header: {
         paddingHorizontal: 20,
-        paddingTop: 20,
-        paddingBottom: 10,
+        paddingTop: 10,
         backgroundColor: 'white',
     },
     title: {

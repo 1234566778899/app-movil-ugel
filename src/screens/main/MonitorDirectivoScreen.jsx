@@ -270,7 +270,7 @@ const MonitorDirectivoScreen = ({ navigation }) => {
                             onPress={() => navigation.navigate('especialistas')}
                             style={{ flex: 1, borderRadius: 5, padding: 5, backgroundColor: 'white' }}>
                             <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 13 }}>Especialista</Text>
-                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{especialistaCurrent ? especialistaCurrent.fullname : 'Selecciona un especialista'}</Text>
+                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{especialistaCurrent ? especialistaCurrent.fullname : '-'}</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: 'row', gap: 10, marginTop: 10 }}>
@@ -278,7 +278,7 @@ const MonitorDirectivoScreen = ({ navigation }) => {
                             onPress={() => navigation.navigate('directivos')}
                             style={{ flex: 1, borderRadius: 5, padding: 5, backgroundColor: 'white' }}>
                             <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 13 }}>Directivo</Text>
-                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{directivoCurrent ? directivoCurrent.full_name : 'Seleccionar un directivo'}</Text>
+                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{directivoCurrent ? directivoCurrent.fullname : '-'}</Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>

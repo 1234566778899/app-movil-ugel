@@ -29,6 +29,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import AddIEApp from './src/screens/main/AddIEApp';
 import AddTeacherScreen from './src/screens/AddTeacherScreen';
 import EditProfileScreen from './src/screens/main/EditProfileScreen';
+import AddDirectivo from './src/screens/main/AddDirectivo';
 
 const theme = {
   ...DefaultTheme,
@@ -138,6 +139,11 @@ export default function App() {
               name="teachers"
               component={TeacherListScreen}
               options={{ title: 'Seleccione un profesor' }}
+            />
+            <Stack.Screen
+              name="add-directivo"
+              component={AddDirectivo}
+              options={{ title: 'Agregar un profesor' }}
             />
             <Stack.Screen
               name="courses"

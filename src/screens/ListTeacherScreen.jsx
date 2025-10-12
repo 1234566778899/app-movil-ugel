@@ -97,7 +97,7 @@ const TeacherListScreen = ({ navigation }) => {
     };
 
     const selectTeacher = (teacher) => {
-        setTeacherCurrent(teacher);
+        setTeacherCurrent({ ...teacher, fullname: `${teacher.name} ${teacher.lname_m} ${teacher.lname_p}` });
         navigation.dispatch(
             CommonActions.reset({
                 index: 1,

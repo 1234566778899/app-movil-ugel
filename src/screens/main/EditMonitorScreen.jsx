@@ -280,7 +280,7 @@ const EditMonitorScreen = ({ navigation }) => {
                         style={{ flexDirection: 'row', gap: 10, marginTop: 10, alignItems: 'center' }}>
                         <View style={{ flex: 1, borderRadius: 5, padding: 5, backgroundColor: 'white' }}>
                             <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 13 }}>Docente observado</Text>
-                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{currentEdit.teacher.name}</Text>
+                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{currentEdit.teacher.fullname}</Text>
                         </View>
                     </TouchableOpacity>
                     <View style={{ flexDirection: 'row', gap: 10, marginTop: 10 }}>

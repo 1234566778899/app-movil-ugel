@@ -172,7 +172,7 @@ const ProfileScreen = ({ navigation }) => {
                                 <Avatar.Image
                                     size={100}
                                     source={{
-                                        uri: user.photo || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDk_071dbbz-bewOvpfYa3IlyImYtpvQmluw&s'
+                                        uri: user?.photo || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDk_071dbbz-bewOvpfYa3IlyImYtpvQmluw&s'
                                     }}
                                 />
                                 <TouchableOpacity
@@ -184,12 +184,12 @@ const ProfileScreen = ({ navigation }) => {
                             </View>
 
                             <View style={styles.userInfo}>
-                                {user.fullname.split(',').map((name, index) => (
+                                {user?.fullname?.split(',').map((name, index) => (
                                     <Text key={index} style={styles.userName}>
                                         {name.trim()}
                                     </Text>
-                                ))}
-                                <Text style={styles.userUsername}>{user.username}</Text>
+                                )) || <Text style={styles.userName}>Usuario</Text>}
+                                <Text style={styles.userUsername}>{user?.username || ''}</Text>
                             </View>
                         </View>
                     </Card.Content>
@@ -200,11 +200,11 @@ const ProfileScreen = ({ navigation }) => {
                     <Card.Content>
                         <Text style={styles.sectionTitle}>Información Personal</Text>
 
-                        <InfoRow icon="call" text={user.celular || 'No registrado'} />
-                        <InfoRow icon="mail" text={user.email_personal || 'No registrado'} />
-                        <InfoRow icon="mail-outline" text={user.email_ie || 'No registrado'} />
-                        <InfoRow icon="card-outline" text={user.dni || 'No registrado'} />
-                        <InfoRow icon="briefcase-outline" text={user.job || 'No registrado'} />
+                        <InfoRow icon="call" text={user?.celular || 'No registrado'} />
+                        <InfoRow icon="mail" text={user?.email_personal || 'No registrado'} />
+                        <InfoRow icon="mail-outline" text={user?.email_ie || 'No registrado'} />
+                        <InfoRow icon="card-outline" text={user?.dni || 'No registrado'} />
+                        <InfoRow icon="briefcase-outline" text={user?.job || 'No registrado'} />
                     </Card.Content>
                 </Card>
 

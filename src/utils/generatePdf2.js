@@ -60,8 +60,8 @@ export const generatePdf2 = async (visit) => {
                             <th>Documento de identidad</th>
                         </tr>
                         <tr>
-                            <td>${visit.directivo.full_name.split(' ')[0]}</td>
-                            <td>${visit.directivo.full_name.split(' ').slice(1).join(' ')}</td>
+                            <td>${visit.directivo.fullname.split(' ')[0]}</td>
+                            <td>${visit.directivo.fullname.split(' ').slice(1).join(' ')}</td>
                             <td>${visit.directivo.dni}</td>
                         </tr>
                     </table>

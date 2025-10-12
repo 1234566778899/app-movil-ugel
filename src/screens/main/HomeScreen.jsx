@@ -167,16 +167,16 @@ const HomeScreen = ({ navigation }) => {
                         <Avatar.Image
                             size={60}
                             source={{
-                                uri: user.photo || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDk_071dbbz-bewOvpfYa3IlyImYtpvQmluw&s'
+                                uri: user?.photo || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDk_071dbbz-bewOvpfYa3IlyImYtpvQmluw&s'
                             }}
                         />
                         <View style={styles.profileInfo}>
                             <Text style={styles.userName}>
-                                {user.fullname?.split(',')[0]}
+                                {user?.fullname?.split(',')[0]}
                             </Text>
-                            <Text style={styles.userRole}>{user.job || 'Usuario'}</Text>
-                            {user.dni && (
-                                <Text style={styles.userDetail}>DNI: {user.dni}</Text>
+                            <Text style={styles.userRole}>{user?.job || 'Usuario'}</Text>
+                            {user?.dni && (
+                                <Text style={styles.userDetail}>DNI: {user?.dni}</Text>
                             )}
                         </View>
                     </Card.Content>

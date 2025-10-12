@@ -56,9 +56,9 @@ export const generatePdf = async (visit) => {
                         </tr>
                         <tr>
                             <th>Apellidos y Nombres</th>
-                            <td>${visit.teacher.name}</td>
+                            <td>${visit.teacher.fullname}</td>
                             <th>DNI</th>
-                            <td>${visit.user.dni}</td>
+                            <td>${visit.teacher.dni}</td>
                         </tr>
                     </table>
                 </div>

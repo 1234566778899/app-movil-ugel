@@ -28,8 +28,8 @@ const RegisterItem = ({ visit, isLocal, onDelete, onEdit, onDownload }) => {
 
     const isDirectivo = visit.type === '2';
     const teacherName = isDirectivo
-        ? visit.directivo?.full_name
-        : visit.teacher?.name;
+        ? visit.directivo?.fullname
+        : visit.teacher?.fullname;
 
     return (
         <Card style={[
@@ -162,6 +162,7 @@ const RegistersScreen = ({ navigation }) => {
             if (networkState.isConnected) {
                 try {
                     const remoteResponse = await axios.get(`${CONFIG.uri}/api/monitors/${user._id}`);
+                    console.log(remoteResponse.data)
                     setVisitsData(remoteResponse.data || []);
                 } catch (error) {
                     console.error('Error al cargar monitoreos remotos:', error);
@@ -209,8 +210,8 @@ const RegistersScreen = ({ navigation }) => {
 
         const filtered = combined.filter(monitor => {
             const teacherName = monitor.type === '2'
-                ? (monitor.directivo?.full_name || '').toLowerCase()
-                : (monitor.teacher?.name || '').toLowerCase();
+                ? (monitor.directivo?.fullname || '').toLowerCase()
+                : (monitor.teacher?.fullname || '').toLowerCase();
             const schoolName = (monitor.school?.name || '').toLowerCase();
 
             return teacherName.includes(word) || schoolName.includes(word);
@@ -221,8 +222,8 @@ const RegistersScreen = ({ navigation }) => {
 
     const deleteMonitor = (visit, isLocal) => {
         const teacherName = visit.type === '2'
-            ? visit.directivo?.full_name
-            : visit.teacher?.name;
+            ? visit.directivo?.fullname
+            : visit.teacher?.fullname;
 
         Alert.alert(
             'Confirmar Eliminación',

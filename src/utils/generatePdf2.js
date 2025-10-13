@@ -75,8 +75,9 @@ export const generatePdf2 = async (visit) => {
                         </tr>
                         <tr>
                             <th>Nombres completos del especialista</th>
-                            <td>Apellidos completos del especialista</td>
+                            <td>${visit.user.fullname}</td>
                             <th>Documento de Identidad</th>
+                            <td colspan="3">${visit.user.dni}</th>
                         </tr>
                         <tr>
                             <th>Número de visita a la IE</th>

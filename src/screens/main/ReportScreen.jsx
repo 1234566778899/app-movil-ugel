@@ -167,11 +167,10 @@ const ReportTable = ({ data, index, isDirectivo }) => {
 const ReportScreen = ({ navigation }) => {
     const [reportData, setReportData] = useState(null);
     const [reportDataDirectivo, setReportDataDirectivo] = useState(null);
-    const { user, filter, setFilter } = useContext(SesionContext);
+    const { user, filter, setFilter, type, setType } = useContext(SesionContext);
     const [showFilter, setShowFilter] = useState(false);
     const [showPicker1, setShowPicker1] = useState(false);
     const [showPicker2, setShowPicker2] = useState(false);
-    const [type, setType] = useState('1');
     const [loading, setLoading] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
 

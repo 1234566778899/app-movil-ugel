@@ -105,14 +105,15 @@ const RegisterItem = ({ visit, isLocal, onDelete, onEdit, onDownload }) => {
                                 size={20}
                                 onPress={onEdit}
                             />
-                            <IconButton
-                                icon="trash-outline"
-                                iconColor="#FF1D41"
-                                size={20}
-                                onPress={onDelete}
-                            />
+
                         </>
                     )}
+                    <IconButton
+                        icon="delete-outline"
+                        iconColor="#FF1D41"
+                        size={20}
+                        onPress={onDelete}
+                    />
                 </View>
             </Card.Content>
         </Card>
@@ -162,7 +163,6 @@ const RegistersScreen = ({ navigation }) => {
             if (networkState.isConnected) {
                 try {
                     const remoteResponse = await axios.get(`${CONFIG.uri}/api/monitors/${user._id}`);
-                    console.log(remoteResponse.data)
                     setVisitsData(remoteResponse.data || []);
                 } catch (error) {
                     console.error('Error al cargar monitoreos remotos:', error);

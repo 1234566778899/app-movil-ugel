@@ -22,6 +22,7 @@ const SesionContextScreen = ({ children }) => {
     const [quantity, setQuantity] = useState(null);
     const [currentEdit, setCurrentEdit] = useState(null);
     const [currentScreen, setCurrentScreen] = useState(0);
+    const [type, setType] = useState('1');
     const [filter, setFilter] = useState({
         district: '',
         startDate: new Date(moment().subtract(1, 'months')),
@@ -84,7 +85,7 @@ const SesionContextScreen = ({ children }) => {
         initialInfo();
     }, [])
     return (
-        <SesionContext.Provider value={{ currentScreen, setCurrentScreen, directivoCurrent, setDirectivoCurrent, especialistaCurrent, setEspecialistaCurrent, education, isConectedNetwork, currentEdit, setCurrentEdit, quantity, getQuantity, setQuantity, startAt, setUser, logout, visit, setVisit, setStartAt, setEducation, currentCourse, setCurrentCourse, user, teacherCurrent, setTeacherCurrent, desempenios, setDesempenios, currentDesempenio, setCurrentDesempenio, filter, setFilter }}>
+        <SesionContext.Provider value={{ currentScreen, type, setType, setCurrentScreen, directivoCurrent, setDirectivoCurrent, especialistaCurrent, setEspecialistaCurrent, education, isConectedNetwork, currentEdit, setCurrentEdit, quantity, getQuantity, setQuantity, startAt, setUser, logout, visit, setVisit, setStartAt, setEducation, currentCourse, setCurrentCourse, user, teacherCurrent, setTeacherCurrent, desempenios, setDesempenios, currentDesempenio, setCurrentDesempenio, filter, setFilter }}>
             {children}
         </SesionContext.Provider>
     )

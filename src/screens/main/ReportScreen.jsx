@@ -9,6 +9,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { TextInput } from 'react-native-paper';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import moment from 'moment';
+import { DataRegister } from '../../utils/dataRegister';
 
 const ReportTable = ({ data, index, isDirectivo }) => {
     const leyend = {
@@ -115,7 +116,7 @@ const ReportTable = ({ data, index, isDirectivo }) => {
                         )}
                         <View style={[styles.tableCell, styles.totalCell, { width: 80 }]}>
                             <Text style={styles.totalText}>
-                                {isDirectivo ? data.total : (data.promedio ? data.promedio.toFixed(2) : 0)}
+                                {data.total}
                             </Text>
                         </View>
                     </View>
@@ -182,8 +183,14 @@ const ReportScreen = ({ navigation }) => {
                 type,
                 id: user._id
             });
+            const orderedData = res.data.sort((a, b) => {
+                const indexA = DataRegister.findIndex(d => d.desempenio === a.desempenio);
+                const indexB = DataRegister.findIndex(d => d.desempenio === b.desempenio);
+                return indexA - indexB;
+            });
+
             setReportDataDirectivo(null);
-            setReportData(res.data);
+            setReportData(orderedData);
         } catch (error) {
             console.error('Error al cargar reporte docente:', error);
             Alert.alert('Error', 'No se pudo obtener el reporte de docentes.');

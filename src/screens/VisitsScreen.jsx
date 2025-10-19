@@ -70,19 +70,19 @@ const VisitItem = ({ visit, isLocal, onDelete }) => {
                     )}
                 </View>
 
-                {user.username === 'admin' && (
-                    <View style={styles.actionsContainer}>
-                        <Button
-                            mode="text"
-                            onPress={onDelete}
-                            textColor="#FF1D41"
-                            icon="delete-outline"
-                            compact
-                        >
-                            Eliminar
-                        </Button>
-                    </View>
-                )}
+
+                <View style={styles.actionsContainer}>
+                    <Button
+                        mode="text"
+                        onPress={onDelete}
+                        textColor="#FF1D41"
+                        icon="delete-outline"
+                        compact
+                    >
+                        Eliminar
+                    </Button>
+                </View>
+
             </Card.Content>
         </Card>
     );
